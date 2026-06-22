@@ -1,6 +1,5 @@
 import { Component, Input, signal } from '@angular/core';
 import { Register } from '../account/register/register';
-import { User } from '../../types/users';
 
 @Component({
   selector: 'app-home',
