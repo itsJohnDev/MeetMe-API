@@ -1,1 +1,37 @@
-<p>member-detail works!</p>
+@if (member$ | async; as member) {
+  <section class="flex gap-6 m-10">
+    <article class="card bg-pink-100 flex flex-col w-1/4">
+      <img
+        src="{{ member.imageUrl || '/user.png' }}"
+        alt="member image"
+        class="rounded-full mx-10 mt-3 object-cover"
+      />
+      <section class="card-body">
+        <section class="flex flex-col items-center">
+          <h1 class="flex text-2xl text-red-500">{{ member.displayName }}, 25</h1>
+
+          <h2 class="text-sm">{{ member.city }} {{ member.country }}</h2>
+        </section>
+
+        <div class="divider"></div>
+
+        <ul class="menu rounded-box w-full text-xl">
+          <li><a routerLink="profile" routerLinkActive="text-red-500">Profile</a></li>
+          <li><a routerLink="profile" routerLinkActive="text-red-500">Photos</a></li>
+          <li><a routerLink="profile" routerLinkActive="text-red-500">Messages</a></li>
+        </ul>
+      </section>
+      <div class="card-actions justify-between gap-2 px-2 mb-3">
+        <button class="btn bg-rose-300 text-white flex-1">Go back</button>
+        <button class="btn btn-error text-white flex-1">Like user</button>
+      </div>
+    </article>
+
+    <div class="card bg-rose-100 w-3/4 p-6">
+      <h3 class="card-title text-3xl text-red-500">Profile</h3>
+      <div class="divider"></div>
+    </div>
+  </section>
+} @else {
+  <div>Member not found</div>
+}
