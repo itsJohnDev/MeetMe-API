@@ -4,6 +4,7 @@ import { AccountService } from '../../core/services/account-service';
 import { LoginCreds } from '../../types/users';
 import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { ToastService } from '../../core/services/toast-service';
+import { themes } from '../themes';
 
 @Component({
   selector: 'app-nav',
